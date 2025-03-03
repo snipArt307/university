@@ -53,6 +53,6 @@ public class Record {
 
     @Override
     public String toString() {
-        return String.format("%s,%s,%s,%s", lastNumber, number, base, newBase);
+        return String.format("Мы перевели число %s, в системе исчисления %s, в %s, в системе счисления %s", lastNumber, base, number, newBase);
     }
 }

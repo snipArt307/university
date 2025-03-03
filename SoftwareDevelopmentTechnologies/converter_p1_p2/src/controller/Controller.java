@@ -16,11 +16,15 @@ public class Controller {
         this.userView = userView;
     }
 
+    public String getHistory() {
+        return model.getHistory().toString();
+    }
+
     public String convertNumber(String number, int base, int newBase) {
         Record newRecord = new Record(number, base, newBase);
         try {
               model.convertNumberToNewBase(newRecord);
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             userView.getErrorIncorrectNumberInput();
         }
         return newRecord.getNumber();

@@ -16,6 +16,7 @@ public class UserView extends JFrame implements View {
 
     private JTabbedPane tabbedPane;
     private JTextField areaP1, areaP2;
+    private JTextArea historyArea, descriptionArea;
     private JLabel labelP1, labelP2, areaNumber, areaNewNumber;
     private JPanel calculatorPanel, panelMain, mainPanel, historyPanel, descriptionPanel;
     private JButton[] buttons = new JButton[20];
@@ -30,14 +31,20 @@ public class UserView extends JFrame implements View {
         this.setSize(500, 400);
 
         tabbedPane = new JTabbedPane();
-
+        historyArea = new JTextArea();
+        descriptionArea = new JTextArea();
         // Используем JPanel вместо JFrame
         mainPanel = new JPanel();
         historyPanel = new JPanel();
+        historyPanel.add(historyArea);
+
         descriptionPanel = new JPanel();
-        tabbedPane.addTab("History", historyPanel);
-        tabbedPane.addTab("Converter", mainPanel);
-        tabbedPane.addTab("Description", descriptionPanel);
+        descriptionPanel.add(descriptionArea);
+        setDescription();
+
+        tabbedPane.addTab("История", historyPanel);
+        tabbedPane.addTab("Конвертёр", mainPanel);
+        tabbedPane.addTab("Описание", descriptionPanel);
 
         newBase = base = 10;
         number = new StringBuilder();
@@ -120,9 +127,14 @@ public class UserView extends JFrame implements View {
             button.addActionListener(this::jButtonActionPerformed);
         }
 
+
         this.add(tabbedPane);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+    }
+
+    private void updateHistoryArea() {
+        historyArea.setText(controller.getHistory());
     }
 
     private void updateSlider1Number() {
@@ -158,6 +170,20 @@ public class UserView extends JFrame implements View {
         areaNumber.setText("Исходное число: " + number.toString());
     }
 
+    private void setDescription() {
+        descriptionArea.setText("Эта программа представляет собой графическое приложение\n" +
+                "на Java для конвертации чисел между различными системами счисления.\n" +
+                "\n" +
+                "Основные функции:\n" +
+                "\n" +
+                "Ввод исходного числа и выбор его системы счисления (от 2 до 16).\n" +
+                "Выбор системы счисления, в которую нужно перевести число.\n" +
+                "Калькулятор для ввода чисел в шестнадцатеричном формате.\n" +
+                "Отображение истории конвертаций.\n" +
+                "Вкладка с описанием работы программы.");
+        descriptionArea.setEditable(false);
+    }
+
     private void jSlider1MouseDragged(MouseEvent e) {
         base = slider1.getValue();
         labelP1.setText("Основание с.сч. исходного числа - " + base);
@@ -181,6 +207,7 @@ public class UserView extends JFrame implements View {
                 break;
             case "Execute":
                 newNumber = controller.convertNumber(number.toString(), base, newBase);
+                updateHistoryArea();
                 updateNewAreaNumber();
                 break;
             default:
