@@ -18,14 +18,14 @@ public class MainModel implements Model {
     }
 
     @Override
-    public String convertNumberToNewBase(String number, int base, int newBase) {
+    public void convertNumberToNewBase(Record record) {
         String newNumber;
-        if (!number.contains(".")) {
-            newNumber = Convector.intToAnyNumberSystem(number, base, newBase);
+        if (!record.getLastNumber().contains(".")) {
+            newNumber = Convector.intToAnyNumberSystem(record.getLastNumber(), record.getBase(), record.getNewBase());
         } else {
-            newNumber = Convector.doubleToAnyNumberSystem(number, base, newBase);
+            newNumber = Convector.doubleToAnyNumberSystem(record.getLastNumber(), record.getBase(), record.getNewBase());
         }
-        history.addEntry(new Record(number, newNumber, base, newBase));
-        return newNumber.toUpperCase();
+        record.setNumber(newNumber);
+        history.addEntry(record);
     }
 }

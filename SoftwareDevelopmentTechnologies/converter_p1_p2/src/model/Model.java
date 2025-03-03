@@ -1,9 +1,10 @@
 package model;
 
 import bean.History;
+import bean.Record;
 
 public interface Model {
     History getHistory();
 
-    String convertNumberToNewBase(String number, int base, int newBase);
+    void convertNumberToNewBase(Record record);
 }

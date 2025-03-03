@@ -1,5 +1,6 @@
 package controller;
 
+import bean.Record;
 import model.Model;
 import view.UserView;
 
@@ -16,12 +17,12 @@ public class Controller {
     }
 
     public String convertNumber(String number, int base, int newBase) {
-        String result = "";
+        Record newRecord = new Record();
         try {
-             result = model.convertNumberToNewBase(number, base, newBase);
+              model.convertNumberToNewBase(newRecord);
         }catch (NumberFormatException e) {
             userView.getErrorIncorrectNumberInput();
         }
-        return result;
+        return newRecord.getNumber();
     }
 }

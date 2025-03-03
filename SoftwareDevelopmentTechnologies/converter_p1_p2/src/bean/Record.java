@@ -6,9 +6,15 @@ public class Record {
     int base;
     int newBase;
 
-    public Record(String lastNumber, String number, int base, int newBase) {
+    public Record() {
+        lastNumber = "";
+        number = "";
+        base = 0;
+        newBase = 0;
+    }
+
+    public Record(String lastNumber, int base, int newBase) {
         this.lastNumber = lastNumber;
-        this.number = number;
         this.base = base;
         this.newBase = newBase;
     }
@@ -27,6 +33,22 @@ public class Record {
 
     public int getNewBase() {
         return newBase;
+    }
+
+    public void setLastNumber(String lastNumber) {
+        this.lastNumber = lastNumber;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
+
+    public void setNewBase(int newBase) {
+        this.newBase = newBase;
     }
 
     @Override
