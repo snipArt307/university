@@ -6,7 +6,7 @@ public class Convector {
         return (char) (x + '0');
     }
 
-    public static String intToAnyNumberSystem(String number, int base, int newBase) {
+    public static String int_to_P(String number, int base, int newBase) {
         if (base == newBase)
             return number;
 
@@ -18,7 +18,7 @@ public class Convector {
         return Long.toString(Long.parseLong(number, base), newBase);
     }
 
-    public static String doubleToAnyNumberSystem(String number, int base, int newBase) {
+    public static String flt_to_P(String number, int base, int newBase) {
         if (base == newBase)
             return number;
 
@@ -29,7 +29,7 @@ public class Convector {
 
         // Преобразование дробной части
         String[] parts = number.split("\\.");
-        String integerPart = intToAnyNumberSystem(parts[0], base, newBase);
+        String integerPart = int_to_P(parts[0], base, newBase);
         StringBuilder fractionalPart = new StringBuilder(".");
 
         double fraction = Integer.parseInt(parts[1], base) / Math.pow(base, parts[1].length());

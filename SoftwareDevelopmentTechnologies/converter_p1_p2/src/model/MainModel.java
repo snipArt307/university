@@ -21,10 +21,11 @@ public class MainModel implements Model {
     public void convertNumberToNewBase(Record record) {
         String newNumber;
         if (!record.getLastNumber().contains(".")) {
-            newNumber = Convector.intToAnyNumberSystem(record.getLastNumber(), record.getBase(), record.getNewBase());
+            newNumber = Convector.int_to_P(record.getLastNumber(), record.getBase(), record.getNewBase());
         } else {
-            newNumber = Convector.doubleToAnyNumberSystem(record.getLastNumber(), record.getBase(), record.getNewBase());
+            newNumber = Convector.flt_to_P(record.getLastNumber(), record.getBase(), record.getNewBase());
         }
+        newNumber = newNumber.toUpperCase();
         record.setNumber(newNumber);
         history.addEntry(record);
     }

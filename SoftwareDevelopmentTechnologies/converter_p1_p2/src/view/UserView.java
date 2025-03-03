@@ -14,9 +14,10 @@ public class UserView extends JFrame implements View {
 
     private Controller controller;
 
+    private JTabbedPane tabbedPane;
     private JTextField areaP1, areaP2;
     private JLabel labelP1, labelP2, areaNumber, areaNewNumber;
-    private JPanel calculatorPanel, panelMain;
+    private JPanel calculatorPanel, panelMain, mainPanel, historyPanel, descriptionPanel;
     private JButton[] buttons = new JButton[20];
     private JSlider slider1, slider2;
 
@@ -25,16 +26,38 @@ public class UserView extends JFrame implements View {
     }
 
     private void initView() {
-        newBase = base = 10;
-        number = new StringBuilder();
-        //creating the main window
-        this.setTitle("User View");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 400);
 
-        //creating the elements
+        tabbedPane = new JTabbedPane();
+
+        // Используем JPanel вместо JFrame
+        mainPanel = new JPanel();
+        historyPanel = new JPanel();
+        descriptionPanel = new JPanel();
+        tabbedPane.addTab("History", historyPanel);
+        tabbedPane.addTab("Converter", mainPanel);
+        tabbedPane.addTab("Description", descriptionPanel);
+
+        newBase = base = 10;
+        number = new StringBuilder();
+
+        // Создание текстовых полей перед использованием
         areaP1 = new JTextField();
         areaP2 = new JTextField();
+        areaP1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateSlider1Number();
+            }
+        });
+        areaP2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateSlider2Number();
+            }
+        });
+
         areaNumber = new JLabel("Исходное число: ");
         areaNewNumber = new JLabel("Результат: ");
         slider1 = new JSlider(2, 16);
@@ -42,22 +65,17 @@ public class UserView extends JFrame implements View {
         labelP1 = new JLabel("Основание с.сч. исходного числа - 10");
         labelP2 = new JLabel("Основание с.сч. результата - 10");
 
-        // Set text alignment
-        labelP1.setHorizontalAlignment(SwingConstants.LEFT);
-        labelP2.setHorizontalAlignment(SwingConstants.LEFT);
-
+        // Настройка размеров
         Dimension dimAreaP = new Dimension(100, 40);
         areaP1.setPreferredSize(dimAreaP);
         areaP2.setPreferredSize(dimAreaP);
-        areaNumber.setPreferredSize(dimAreaP);
-        areaNewNumber.setPreferredSize(dimAreaP);
 
-        //creating the base skeleton
+        // Создание панели
         panelMain = new JPanel();
+        mainPanel.add(panelMain);
         panelMain.setLayout(new BoxLayout(panelMain, BoxLayout.Y_AXIS));
-        this.add(panelMain);
 
-        //creating first slider
+        // Добавление элементов
         panelMain.add(areaP1);
         panelMain.add(labelP1);
         panelMain.add(slider1);
@@ -69,7 +87,6 @@ public class UserView extends JFrame implements View {
             }
         });
 
-        //creating second slider
         panelMain.add(areaP2);
         panelMain.add(labelP2);
         panelMain.add(slider2);
@@ -84,7 +101,7 @@ public class UserView extends JFrame implements View {
         panelMain.add(areaNumber);
         panelMain.add(areaNewNumber);
 
-        //creating to calculate panel
+        // Панель калькулятора
         calculatorPanel = new JPanel();
         calculatorPanel.setLayout(new GridLayout(5, 4));
         panelMain.add(calculatorPanel);
@@ -93,23 +110,43 @@ public class UserView extends JFrame implements View {
         buttons[17] = new JButton("BS");
         buttons[18] = new JButton("CE");
         buttons[19] = new JButton("Execute");
+
         for (int i = 0; i < 20; i++) {
             if (i < 16) buttons[i] = new JButton(Integer.toHexString(i).toUpperCase());
             calculatorPanel.add(buttons[i]);
         }
 
         for (JButton button : buttons) {
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    jButtonActionPerformed(e);
-                }
-            });
+            button.addActionListener(this::jButtonActionPerformed);
         }
 
+        this.add(tabbedPane);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
+    private void updateSlider1Number() {
+        int el = Integer.parseInt(areaP1.getText());
+        if (el <= 16 && el >= 2) {
+            base = el;
+            slider1.setValue(base);
+            labelP1.setText("Основание с.сч. исходного числа - " + base);
+        } else {
+            getErrorIncorrectNumberInput();
+        }
+    }
+
+    private void updateSlider2Number() {
+        int el = Integer.parseInt(areaP2.getText());
+        if (el <= 16 && el >= 2) {
+            newBase = Integer.parseInt(areaP2.getText());
+            slider2.setValue(newBase);
+            labelP2.setText("Основание с.сч. результата - " + newBase);
+        } else {
+            getErrorIncorrectNumberInput();
+        }
+    }
+
 
     private void updateNewAreaNumber() {
         areaNumber.setText("Исходное число: " + number.toString());
@@ -164,5 +201,4 @@ public class UserView extends JFrame implements View {
     public void setController(Controller controller) {
         this.controller = controller;
     }
-
 }

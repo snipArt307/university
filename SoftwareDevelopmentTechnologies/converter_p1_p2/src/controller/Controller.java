@@ -17,7 +17,7 @@ public class Controller {
     }
 
     public String convertNumber(String number, int base, int newBase) {
-        Record newRecord = new Record();
+        Record newRecord = new Record(number, base, newBase);
         try {
               model.convertNumberToNewBase(newRecord);
         }catch (NumberFormatException e) {
