@@ -1,0 +1,205 @@
+/* Общий контейнер */
+.table-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+    background-color: #f5f5f5;
+  }
+  
+  /* Заголовок */
+  .table-content-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Контейнер для кнопок действий */
+  .table-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Кнопка действия */
+  .action-button {
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+  }
+  
+  /* Эффект при наведении на кнопку */
+  .action-button:hover {
+    background-color: #b0b0b0;
+  }
+  
+  /* Кнопка "Поиск абонента" */
+  .search-button span {
+    margin-right: 5px;
+  }
+  
+  /* Обертка таблицы */
+  .table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  /* Таблица */
+  .page-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+  }
+  
+  /* Заголовки таблицы */
+  .page-table th {
+    background-color: #d3d3d3;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    border: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  /* Ячейки таблицы */
+  .page-table td {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Четные строки */
+  .page-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Поля ввода при редактировании */
+  .page-table input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+  /* Чекбоксы */
+  .page-table input[type="checkbox"] {
+    cursor: pointer;
+  }
+  
+  /* Кнопка редактирования */
+  .edit-button {
+    background: none;
+    border: none;
+    color: #3498db;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Кнопки "Сохранить" и "Отмена" */
+  .edit-actions {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .edit-actions button {
+    padding: 8px 20px;
+    margin: 0 5px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-actions button:hover {
+    background-color: #555;
+  }
+  
+  /* Стилизация скроллбара (для WebKit-браузеров: Chrome, Safari, Edge) */
+  .table-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+  
+  /* Стилизация скроллбара для Firefox */
+  .table-container {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 #e0e0e0;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .table-content-container {
+      padding: 20px;
+    }
+  
+    .table-content-container h1 {
+      font-size: 28px;
+    }
+  
+    .table-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .action-button {
+      font-size: 12px;
+      padding: 8px 15px;
+    }
+  
+    .table-container {
+      max-height: 300px;
+    }
+  
+    .page-table th,
+    .page-table td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }

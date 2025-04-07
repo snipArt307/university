@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1c64315-fc76-46bb-a710-1a06e4376790" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../book_phone/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/src/test/java/org/example/TObjectListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book_phone/src/test/java/org/example/TRecordTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/EditorPNumberTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TPNumberTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TProcTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/model/MainModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/model/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/model/TAbonent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/model/TObjectList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/model/TRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phone_book/src/view/View.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2uzZMtZBnCxBL3GsVeAGw0uwQIn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.my-project [clean].executor": "Run",
+    "Maven.my-project [compile].executor": "Run",
+    "Maven.my-project [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/artem/program/university/SoftwareDevelopmentTechnologies/phone_book",
+    "onboarding.tips.debug.path": "/home/artem/program/university/SoftwareDevelopmentTechnologies/calculator/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1c64315-fc76-46bb-a710-1a06e4376790" name="Changes" comment="" />
+      <created>1743253321111</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743253321111</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/CalculatorController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/CalculatorView.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

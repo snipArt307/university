@@ -1,0 +1,92 @@
+/* Общий контейнер */
+.address-book-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+    background-color: #f5f5f5;
+  }
+  
+  /* Заголовок */
+  .address-book-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Подзаголовок */
+  .address-book-container p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  /* Уведомление */
+  .notification {
+    color: #2ecc71;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Группа кнопок */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  /* Кнопка с иконкой */
+  .icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Эффект при наведении */
+  .icon-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Эффект при нажатии */
+  .icon-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Стиль кнопки в состоянии загрузки */
+  .icon-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Иконки */
+  .icon {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Текст кнопки */
+  .icon-button span:not(.icon) {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Информация об учетной записи */
+  .username {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0;
+  }

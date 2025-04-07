@@ -1,0 +1,163 @@
+/* Общий контейнер */
+.digest-book {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+    background-color: #f5f5f5;
+}
+
+/* Заголовок */
+.digest-book h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Подзаголовок */
+.digest-book p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Сообщение о загрузке */
+.loading {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Сообщение об ошибке */
+.error {
+    font-size: 14px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+/* Обертка таблицы */
+.table-container {
+    max-height: 400px; /* Ограничиваем высоту таблицы */
+    overflow-y: auto; /* Включаем только вертикальную прокрутку */
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+    border: 1px solid #ccc; /* Граница вокруг всей таблицы */
+    border-radius: 5px; /* Закругленные углы */
+    position: relative; /* Для корректной работы position: sticky */
+}
+
+/* Таблица */
+.address-table {
+    width: 100%; /* Таблица занимает 100% ширины контейнера */
+    border-collapse: collapse;
+    margin-bottom: 0; /* Убираем лишний отступ, так как обертка уже управляет отступами */
+    table-layout: auto; /* Позволяем столбцам адаптироваться к содержимому */
+}
+
+/* Заголовки таблицы */
+.address-table th {
+    background-color: #d3d3d3;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    border: 1px solid #ccc;
+    position: sticky; /* Фиксируем заголовки при прокрутке */
+    top: 0;
+    z-index: 1;
+}
+
+/* Ячейки таблицы */
+.address-table td {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    text-align: left;
+    white-space: nowrap; /* Предотвращаем перенос текста */
+    overflow: hidden; /* Скрываем переполнение */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст обрезается */
+}
+
+/* Четные строки */
+.address-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Стилизация скроллбара (для WebKit-браузеров: Chrome, Safari, Edge) */
+.table-container::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикального скроллбара */
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Цвет трека */
+    border-radius: 5px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #b0b0b0; /* Цвет бегунка */
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Стилизация скроллбара для Firefox */
+.table-container {
+    scrollbar-width: thin; /* Тонкий скроллбар */
+    scrollbar-color: #b0b0b0 #e0e0e0; /* Цвет бегунка и трека */
+}
+
+/* Группа кнопок */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Кнопка */
+.icon-button {
+    padding: 10px 30px;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Эффект при наведении */
+.icon-button:hover {
+    background-color: #555;
+}
+
+/* Стиль кнопки в состоянии загрузки */
+.icon-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Медиа-запрос для адаптивности */
+@media (max-width: 480px) {
+    .table-container {
+        max-height: 300px; /* Уменьшаем высоту на мобильных */
+        overflow-y: auto; /* Убедимся, что вертикальная прокрутка включена */
+        overflow-x: hidden; /* Убедимся, что горизонтальная прокрутка отключена */
+    }
+
+    .address-table th,
+    .address-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
